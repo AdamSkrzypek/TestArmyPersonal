@@ -1,1 +1,1 @@
-# Test checking personal data with Selenium Webdriver and TestNG
+# Selenium and TestNG test checking personal data.
