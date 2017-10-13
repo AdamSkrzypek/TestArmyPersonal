@@ -8,6 +8,7 @@ public class MainTest {
     PersonalPage personalPage = new PersonalPage();
     PersonalInformationPage personalInformationPage = new PersonalInformationPage();
     private final String loginURL = "https://my.testarmy.com/login";
+    private final String PersonalURL = "https://my.testarmy.com/profile/personal";
 
     @BeforeTest
     public void SetupTestLogin() {
@@ -21,6 +22,12 @@ public class MainTest {
                 "After Login Dashboard should be selected!");
     }
 
+
+    @Test
+    public void SetupTestSavedData(){
+        DriverManager.getDriver().navigate().to(PersonalURL);
+
+    }
     @Test
     public void CheckingSavedData(){
         personalPage.Personal("Adam", "Skrzypek");
