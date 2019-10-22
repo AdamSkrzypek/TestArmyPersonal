@@ -1,4 +1,4 @@
-#Automatic Test veryfing whether user:
+Automatic Test veryfing whether user:
 - provide correct credentials
 - provide personal information
 
