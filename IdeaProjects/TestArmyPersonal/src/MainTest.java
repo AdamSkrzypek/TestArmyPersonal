@@ -30,7 +30,10 @@ public class MainTest {
     }
     @Test
     public void CheckingSavedData(){
-        personalPage.Personal("Adam", "Skrzypek");
+        personalPage.inputFirstAndLastName("Adam", "Skrzypek");
+        personalPage.selectGender();
+        personalPage.enterYearOfBirth();
+        personalPage.savePersonalData();
         Assert.assertEquals(personalInformationPage.getMessageReceived(),"Profile has been saved","Something went wrong");
     }
 
