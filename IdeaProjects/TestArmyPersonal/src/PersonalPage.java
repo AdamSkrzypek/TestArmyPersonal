@@ -3,7 +3,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class PersonalPage extends BasePage{
+class PersonalPage extends BasePage{
 
     private final By inputFirstName = By.xpath("//input[@formcontrolname='name']");
     private final By inputLastName = By.xpath("//input[@formcontrolname='surname']");
@@ -17,16 +17,12 @@ public class PersonalPage extends BasePage{
     private final By correctDay =By.xpath("//span[contains(.,'             24           ')]");
     private final By buttonSave = By.xpath("//button[@class='btn btn-default save']");
 
-    public void Personal(String name, String lastName){
-
-        firefoxDriver.findElement(inputFirstName).sendKeys(name);
-        firefoxDriver.findElement(inputLastName).sendKeys(lastName);
-        firefoxDriver.findElement(buttonGender).click();
+     void enterYearOfBirth() {
 
         firefoxDriver.findElement(buttonCalendar).click();
         firefoxDriver.findElement(buttonCalendarSelectYear).click();
 
-        List<WebElement> myElementsYear =firefoxDriver.findElements(allYears);
+        List<WebElement> myElementsYear = firefoxDriver.findElements(allYears);
         for (WebElement e: myElementsYear) {
             if (e.getText().contains("1991")){
                 firefoxDriver.findElement(correctYear).click();
@@ -44,6 +40,21 @@ public class PersonalPage extends BasePage{
 
         }
 
+    }
+
+    void savePersonalData() {
         firefoxDriver.findElement(buttonSave).click();
     }
+
+    void selectGender() {
+        firefoxDriver.findElement(buttonGender).click();
+    }
+
+     void inputFirstAndLastName(String name, String lastName) {
+        firefoxDriver.findElement(inputFirstName).sendKeys(name);
+        firefoxDriver.findElement(inputLastName).sendKeys(lastName);
+    }
+
+
 }
+
